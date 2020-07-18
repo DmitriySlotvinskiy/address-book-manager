@@ -22,12 +22,14 @@
 
 </table>
 <table border="1">
-    <th>Id</th>
-    <th>Username</th>
-    <th>Password</th>
+    <th>No.</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Address</th>
     <th colspan="3">Operations</th>
 
     <%
+        int position = 1;
         for (String res : (String[]) request.getAttribute("records")) {
             res = res.replace("First name: ", "");
             res = res.replace("Last name: ", "");
@@ -40,6 +42,8 @@
     %>
 
     <tr>
+        <td><%=position%>
+        </td>
         <td><%=firstName%>
         </td>
         <td><%=lastName%>
@@ -58,6 +62,7 @@
     </tr>
 
     <%
+            position++;
         }
     %>
 
